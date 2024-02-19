@@ -18,7 +18,7 @@ public class APITesting {
     static String login = "";
     static String password = "";
 
-    static String base_URI = "";
+    static String base_URI = "https://favqs.com/api";
     static String apiKey = "";
 
     /**
