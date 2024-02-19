@@ -14,10 +14,10 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class APITesting {
     static String login = "singlaneeraj768@gmail.com";
-    static String password = "ef2d4de8462e1";
+    static String password = "";
 
     static String base_URI = "https://favqs.com/api";
-    static String apiKey = "259b327184870f28a63fa93bb5246492";
+    static String apiKey = "";
 
     private String createSession() {
 
@@ -95,8 +95,7 @@ public class APITesting {
                 fieldName = "hidden";
                 listQuotes(filterType, fieldName, value, expected);
                 break;
-            case "private quotes":
-                filterType = "filter=" + value + "&private=1";
+
             default:
                 filterType = "";
                 fieldName = "id";
