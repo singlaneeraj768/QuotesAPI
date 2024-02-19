@@ -10,6 +10,6 @@ Feature: Get all List Quotes
       | "author"  | "Mohnish"       | "false"       |
       | "author"  | "2332"          | "false"       |
       | "tags"    | "funny"         | "true"        |
-      | "private" | ""              | "true"        |
+      | "private" | ""              | "false"       |
 
 

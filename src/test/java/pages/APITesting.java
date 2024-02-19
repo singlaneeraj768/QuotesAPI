@@ -13,12 +13,18 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class APITesting {
-    static String login = "singlaneeraj768@gmail.com";
+    // To do
+    //Please provide login, password, apiKey
+    static String login = "";
     static String password = "";
 
-    static String base_URI = "https://favqs.com/api";
+    static String base_URI = "";
     static String apiKey = "";
 
+    /**
+     * @return String value
+     * @description method for creating session
+     */
     private String createSession() {
 
         JSONObject user = new JSONObject();
@@ -40,16 +46,31 @@ public class APITesting {
         return rs.path("User-Token");
     }
 
+    /**
+     * @return Header
+     * @description method for getting Authorized token
+     */
     private Header getAuthorization() {
         Header auth = new Header("Authorization", "Token token=" + apiKey);
         return auth;
     }
 
+    /**
+     * @return Header
+     * @description method for creating and getting user token while calling createSession method
+     */
     private Header getUserToken() {
         Header userToken = new Header("User-Token", createSession());
         return userToken;
     }
 
+    /***
+     *
+     * @param filter
+     * @param value
+     * @param valueExpected
+     * @description filter used in List Quotes
+     */
     @Test
     public void filter(String filter, String value, String valueExpected) {
         // Filter : we have to pass which type of filter we want to apply
@@ -104,6 +125,15 @@ public class APITesting {
         }
     }
 
+    /***
+     *
+     * @param filterType
+     * @param fieldName
+     * @param value
+     * @param valueExpected
+     * @description Method for getting the list of quotes and verification of same
+     * for all the pages
+     */
     @Test
     public void listQuotes(String filterType, String fieldName, String value, Boolean valueExpected) {
         Map<Integer, JSONObject> map = new HashMap<>();
